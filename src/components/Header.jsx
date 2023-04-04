@@ -3,7 +3,8 @@ import React from 'react'
 const Header = () => {
     return (
         <div>
-            head
+            <div>Header</div>
+            <div>open/close sidebar</div>
         </div>
     )
 }
