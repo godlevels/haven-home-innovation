@@ -10,7 +10,7 @@ const Sidebar = () => {
     const {isOpen, handleClose} = useContext(SidebarContext)
     // console.log(useContext(CartContext))
 
-    const { cart } = useContext(CartContext)
+    const { cart, clearCart } = useContext(CartContext)
     return (
         <div className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] lg:max-w-[30vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[25px]`}>
             <div className='flex items-center justify-between py-6 border-b'>
@@ -25,6 +25,18 @@ const Sidebar = () => {
                         <CartItem item={item} key={item.id}/>         
                     )
                 })}
+            </div>
+
+            <div>
+                <div className='flex justify-between items-center w-full'>
+                    <div>
+                        <span>Total:</span>$ 1000
+                    </div>
+
+                    <div onClick={clearCart} className='cursor-pointer py-4 bg-rose-500 text-white w-12 h-12 flex justify-center items-center text-xl'>
+                        <FiTrash2 />
+                    </div>
+                </div>
             </div>
         </div>
     )
